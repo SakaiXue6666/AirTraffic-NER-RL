@@ -1,11 +1,14 @@
+from data import load_entity_types
+
 MODEL_NAME = "Qwen/Qwen3-1.7B"
 
 # 这里建议填 SFT 后的 LoRA 路径，GRPO 从它继续训
 SFT_LORA_PATH = "./output/lora_sft"
 GRPO_OUTPUT_DIR = "./output/lora_grpo"
 
-TRAIN_FILE = "./raw_train.jsonl"
-ENTITY_TYPES = ["name", "company"]
+TRAIN_FILE = "datasets/cluener/train.json"
+ENT2ID_JSON = "datasets/cluener/ent2id.json"
+ENTITY_TYPES = load_entity_types(ENT2ID_JSON)
 
 # prompt / generation
 MAX_PROMPT_LENGTH = 512

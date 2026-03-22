@@ -1,8 +1,11 @@
+from data import load_entity_types
+
 MODEL_NAME = "Qwen/Qwen3-1.7B"
-TRAIN_FILE = "..."
+TRAIN_FILE = "datasets/cluener/train.json"
+ENT2ID_JSON = "datasets/cluener/ent2id.json"
 OUTPUT_DIR = "output/lora_sft"
 
-ENTITY_TYPES = ["name", "company"]
+ENTITY_TYPES = load_entity_types(ENT2ID_JSON)
 
 MAX_LENGTH = 512
 

@@ -28,3 +28,12 @@ def load_jsonl(file_path):
                 continue
             data.append(json.loads(line))
     return data
+
+
+def load_entity_types(ent2id_path):
+    """从 ent2id.json（实体名 -> 整数 id）得到按 id 排序的实体类型列表。"""
+    with open(ent2id_path, "r", encoding="utf-8") as f:
+        ent2id = json.load(f)
+    if not isinstance(ent2id, dict):
+        raise ValueError("ent2id 文件应为 JSON 对象：实体名 -> id")
+    return [name for name, _ in sorted(ent2id.items(), key=lambda kv: kv[1])]
