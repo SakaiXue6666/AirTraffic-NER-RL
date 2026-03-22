@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+.env.*
+
+# 预训练模型本地目录（仍从 Hub 拉取时可放在此处，勿提交）
+pretrained/
+pretrained_models/
+hf_models/
+
+# 训练保存的 LoRA / checkpoint / Trainer 输出（对应 sft_config.OUTPUT_DIR 等）
+output/
+checkpoints/
+**/checkpoint-*/
+
+# datasets/ 与 results/（或其它你放「结果输出」的目录）不写入本文件 = 会继续被 Git 跟踪
+# 建议：指标、预测表、日志摘要等放在 results/，模型权重放在 output/
