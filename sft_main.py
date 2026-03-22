@@ -10,7 +10,7 @@ from config import (
     LOGGING_STEPS,
     SAVE_STEPS,
 )
-from data import build_dataset, tokenize_dataset
+from sft_data import build_dataset, tokenize_dataset
 from model import load_tokenizer, load_model, apply_lora
 
 
